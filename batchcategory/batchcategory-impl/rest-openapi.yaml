@@ -1,0 +1,59 @@
+info:
+    description: "Batchcategory REST API"
+    license:
+        name: "Apache 2.0"
+        url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    title: "Batchcategory"
+    version: v1.0
+openapi: 3.0.1
+
+paths:
+  /categories/batch:
+    post:
+      tags:
+        - Category
+      operationId: postBatchCategories
+      summary: Import hierarchical categories in batch
+      requestBody:
+        description: Batch categories to import
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryBatchRequest'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/CategoryBatchRequest'
+      responses:
+        "200":
+          description: Categories imported successfully
+
+components:
+  schemas:
+    CategoryBatchRequest:
+      type: object
+      properties:
+        batchId:
+          type: string
+          description: Unique identifier for the batch
+        timestamp:
+          type: string
+          format: date-time
+          description: Timestamp of the batch import
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+    Category:
+      type: object
+      properties:
+        name:
+          type: string
+        externalReferenceCode:
+          type: string
+        parentExternalReferenceCode:
+          type: string
+        vocabularyExternalReferenceCode:
+          type: string
+        description:
+          type: string

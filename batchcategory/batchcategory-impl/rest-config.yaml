@@ -1,0 +1,9 @@
+apiDir: "../batchcategory-api/src/main/java"
+apiPackagePath: "com.example.batchimport"
+application:
+    baseURI: "/batchcategory"
+    className: "BatchcategoryApplication"
+    name: "Batchcategory"
+author: "admin1"
+clientDir: "../batchcategory-client/src/main/java"
+testDir: "../batchcategory-test/src/testIntegration/java"
