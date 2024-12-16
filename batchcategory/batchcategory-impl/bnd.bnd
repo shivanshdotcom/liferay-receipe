@@ -1,0 +1,3 @@
+Bundle-Name: batchcategory-impl
+Bundle-SymbolicName: com.example.batchimport.impl
+Bundle-Version: 1.0.0

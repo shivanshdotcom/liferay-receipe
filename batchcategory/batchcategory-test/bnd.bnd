@@ -1,0 +1,5 @@
+Bundle-Name: batchcategory-test
+Bundle-SymbolicName: com.example.batchimport.test
+Bundle-Version: 1.0.0
+-includeresource: com.example.batchimport.client.jar=../batchcategory-client/build/libs/com.example.batchimport.client-1.0.0.jar;lib:=true
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}
